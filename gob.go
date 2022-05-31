@@ -7,11 +7,11 @@ import (
 	"io/ioutil"
 )
 
-type Post struct {
-	Id      int
-	Content string
-	Author  string
-}
+// type Post struct {
+// 	Id      int
+// 	Content string
+// 	Author  string
+// }
 
 func store(data interface{}, filename string) {
 	buffer := new(bytes.Buffer)
