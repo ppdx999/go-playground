@@ -26,17 +26,17 @@ type Post struct {
 
 var Db *sql.DB
 
-func init() {
-	var err error
-	// cred := getCredential()
-	// Initialize connection string.
-	var connectionString string = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", "localhost", "5432", "postgres", "admin", "chitchat")
-	fmt.Println(connectionString)
-	Db, err = sql.Open("postgres", connectionString)
-	if err != nil {
-		panic(err)
-	}
-}
+// func init() {
+// 	var err error
+// 	// cred := getCredential()
+// 	// Initialize connection string.
+// 	var connectionString string = fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", "localhost", "5432", "postgres", "admin", "chitchat")
+// 	fmt.Println(connectionString)
+// 	Db, err = sql.Open("postgres", connectionString)
+// 	if err != nil {
+// 		panic(err)
+// 	}
+// }
 
 func Posts(limit int) (posts []Post, err error) {
 	rows, err := Db.Query("select id, content, author from test limit $1", limit)
